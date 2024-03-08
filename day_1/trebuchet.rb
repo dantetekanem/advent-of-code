@@ -1,4 +1,9 @@
-test_line = '1abc2twone'
+# My solution is not the most elegant, instead of trying to loop the string for each match and capture the current index
+# I've decided to be more simple as the request. I'll check the first and the last match, just reversing data
+# This way I can find a match for the use case of 1twone, which in a singular scan goes 12
+# But the correct answer is supposed to be 11, since there are 3 matches in there, 1, two and one.
+# Using a reverse approach, I match the first result: 1, and the last result: one.
+
 NUM_WORDS = %w[one two three four five six seven eight nine]
 REGEX = /\d|#{NUM_WORDS.join('|')}/
 REGEX_REVERSE = /\d|#{NUM_WORDS.map(&:reverse).join('|')}/
@@ -11,8 +16,6 @@ def trebuchet(line)
 
   "#{first}#{last}".to_i
 end
-
-# puts trebuchet(test_line)
 
 total = 0
 IO.foreach('input.txt') do |line|
