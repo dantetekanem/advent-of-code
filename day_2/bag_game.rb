@@ -1,6 +1,13 @@
+# The solution for the second game
+# I've decide to use a scan again, since I have a mix of numbers to analyze between strings
+# I am not a particular fan of spliting words and mapping, i don't own much control over them
+# Using a scan and a regex (thank you rubular.com!), I can easily capture the information for mapping
+# Which was particulary interesting in this case, as the all? used in the round_valid? was overwriting the repetitions correctly
+# If the game rule have been in a different order, this wouldn't work.
+
 class BagGame
-  COLOR_REGEX = /(\d+)+\s+(\w+)/
-  GAME_REGEX = /Game (\d+): (.+)/
+  COLOR_REGEX = /(\d+)+\s+(\w+)/ # Capture the color and the count, e.g. 12 red -> [12, red]
+  GAME_REGEX = /Game (\d+): (.+)/ # Capture the game id and the game, e.g. Game 1: 12 red; 13 green; 14 blue -> [1, "12 red; 13 green; 14 blue"]
 
   attr_reader :red, :green, :blue
 
