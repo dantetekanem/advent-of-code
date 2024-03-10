@@ -5,7 +5,7 @@
 # Which was particulary interesting in this case, as the all? used in the round_valid? was overwriting the repetitions correctly
 # If the game rule have been in a different order, this wouldn't work.
 
-class BagGame
+class CubeConundrum
   COLOR_REGEX = /(\d+)+\s+(\w+)/ # Capture the color and the count, e.g. 12 red -> [12, red]
   GAME_REGEX = /Game (\d+): (.+)/ # Capture the game id and the game, e.g. Game 1: 12 red; 13 green; 14 blue -> [1, "12 red; 13 green; 14 blue"]
 
@@ -47,7 +47,7 @@ class BagGame
   end
 end
 
-bag_game = BagGame.new(12, 13, 14)
+bag_game = CubeConundrum.new(12, 13, 14)
 
 sum_of_ids = 0
 IO.foreach('input.txt') do |line|
