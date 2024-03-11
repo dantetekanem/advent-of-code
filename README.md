@@ -4,3 +4,4 @@ This is my collection of solutions for the advent of code (2023), all done using
 
 - [Day 1, Trebuchet](/day_1/trebuchet.rb)
 - [Day 2, Cube Conundrum](/day_2/cube_conundrum.rb)
+- [Day 3, Gear Ratios](/day_3/gear_ratios.rb)
